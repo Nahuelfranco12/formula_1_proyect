@@ -19,7 +19,8 @@ app.get('/', (req, res) => {
 	res.send('FORMULA 1 APP')
 })
 
-app.get('/api/v1/escuderias', (req, res) => {
+app.get('/api/v1/escuderias', async(req, res) => {
+	const escuderias = await prisma.escuderia.findMany()
 	res.json(escuderias)
 })
 
@@ -28,7 +29,7 @@ app.get('/api/v1/escuderias/:id', (req, res) => {
 	res.json(escuderia)
 })
 
-app.post('/api/v1/escuderias', (req, res) => {
+/* app.post('/api/v1/escuderias', (req, res) => {
 
 	const escuderia = {
 		id: escuderias.length + 1,
@@ -60,7 +61,7 @@ app.put('/api/v1/escuderias/:id', (req, res) => {
 	escuderias[escuderia_index].nombre = req.body.nombre ?? escuderias[escuderia_index].nombre
 	escuderias[escuderia_index].pais = req.body.pais ?? escuderias[escuderia_index].pais
 	res.send(escuderias[escuderia_index])
-})
+}) */
 
 app.listen(port, () => {
 	console.log(`Formula1 app listening on port ${port}`)
