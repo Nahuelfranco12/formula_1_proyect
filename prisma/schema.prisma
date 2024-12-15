@@ -18,15 +18,15 @@ model piloto{
 	nombre_piloto String
 	nacionalidad_piloto String
 	edad_piloto Int
-	puntos_piloto Int
-	posicion_piloto Int
+	puntos_piloto Int @default(0)
+	posicion_piloto Int @default(0)
 }
 
 model escuderia{
 	id_escuderia Int @id @default(autoincrement())
 	nombre_escuderia String
-	puntos_escuderia Int
 	pais_escuderia String
 	anio_creacion_escuderia Int
-	posicion_escuderia Int
+	puntos_escuderia Int @default(0)
+	posicion_escuderia Int @default(0)
 }
