@@ -3,3 +3,4 @@ node_modules/
 .env
 psql_data
 
+backend/src/index2.js
