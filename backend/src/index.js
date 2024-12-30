@@ -43,10 +43,10 @@ app.get('/api/v1/pilotos/:id', async (req, res) => {
 
 app.post('/api/v1/pilotos', async (req, res) => {
 	const { nombre_piloto, nacionalidad_piloto, edad_piloto, puntos_piloto, 
-			posicion_piloto, id_escuderia } = req.body
+			posicion_piloto, id_escuderia, actual_escuderia } = req.body
 
 	if (!nombre_piloto || !nacionalidad_piloto || !edad_piloto || !puntos_piloto || 
-		!posicion_piloto || !id_escuderia) {
+		!posicion_piloto || !id_escuderia || !actual_escuderia) {
 		return res.status(400).send({ 
 			error: 'Todos los campos son obligatorios.' 
 		})
@@ -61,6 +61,7 @@ app.post('/api/v1/pilotos', async (req, res) => {
 				puntos_piloto,
 				posicion_piloto,
 				id_escuderia,
+				actual_escuderia
 			}
 		})
 		res.status(201).send(piloto)
@@ -92,7 +93,8 @@ app.put('/api/v1/pilotos/:id', async (req, res) => {
 				nacionalidad_piloto: req.body.nacionalidad_piloto,
 				edad_piloto: req.body.edad_piloto,
 				puntos_piloto: req.body.puntos_piloto,
-				id_escuderia: req.body.id_escuderia
+				id_escuderia: req.body.id_escuderia,
+				actual_escuderia: req.body.actual_escuderia
 			}
 	 	})
 	  	res.json(piloto)

@@ -21,6 +21,7 @@ model piloto{
 	puntos_piloto Int
 	posicion_piloto Int
 	id_escuderia Int
+	actual_escuderia String @default("undefined")
 	escuderia escuderia @relation(fields: [id_escuderia], references: [id_escuderia])
   carreras carrera[]
 }

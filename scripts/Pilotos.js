@@ -34,6 +34,9 @@ mostrar_Pilotos = function() {
 				let posicion = document.createElement('p');
 				posicion.textContent = `Posicion: ${piloto.posicion_piloto}`;
 
+                let nombre_escuderia = document.createElement('p');
+                nombre_escuderia.textContent = `Nombre de Escuderia: ${piloto.actual_escuderia}`;
+
 				let boton = document.createElement('button');
 				boton.className = 'boton_borrar';
 				boton.textContent = 'Borrar';
@@ -48,6 +51,7 @@ mostrar_Pilotos = function() {
 				div.appendChild(edad);
 				div.appendChild(puntos);
 				div.appendChild(posicion);
+                div.appendChild(nombre_escuderia);
 				div.appendChild(boton);
 
 				padre.appendChild(div);
@@ -76,6 +80,7 @@ agregar_piloto = function() {
         const puntos = document.getElementById('puntos_piloto').value;
         const posicion = document.getElementById('posicion_piloto').value;
         const escuderia = document.getElementById('id_escuderia').value;
+        const nombre_escuderia = document.getElementById('actual_escuderia').value;
 
         let body = {
             nombre_piloto: nombre,
@@ -83,7 +88,8 @@ agregar_piloto = function() {
             edad_piloto: parseInt(edad),
             puntos_piloto: parseInt(puntos),
             posicion_piloto: parseInt(posicion),
-            id_escuderia: parseInt(escuderia)
+            id_escuderia: parseInt(escuderia),
+            actual_escuderia: nombre_escuderia
         };
         fetch("http://127.0.0.1:3000/api/v1/pilotos",{
             method: 'POST',
@@ -151,6 +157,8 @@ function limpiar_formulario() {
     document.getElementById('puntos_piloto').value = '';
     document.getElementById('posicion_piloto').value = '';
     document.getElementById('id_escuderia').value = '';
+    document.getElementById('actual_escuderia').value = '';
 }
+
 
 mostrar_Pilotos();
