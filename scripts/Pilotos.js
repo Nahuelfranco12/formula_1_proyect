@@ -34,8 +34,8 @@ mostrar_Pilotos = function() {
 				let posicion = document.createElement('p');
 				posicion.textContent = `Posicion: ${piloto.posicion_piloto}`;
 
-				let escuderia_nombre = document.createElement('p');
-				escuderia_nombre.textContent = `Escuderia: ${piloto.escuderia.nombre_escuderia}`;
+				let escuderia_actual = document.createElement('p');
+				escuderia_actual.textContent = `Escuderia: ${piloto.escuderia.nombre_escuderia}`;
 
 				let boton = document.createElement('button');
 				boton.className = 'boton_borrar';
@@ -51,7 +51,7 @@ mostrar_Pilotos = function() {
 				div.appendChild(edad);
 				div.appendChild(puntos);
 				div.appendChild(posicion);
-				div.appendChild(escuderia_nombre);
+				div.appendChild(escuderia_actual);
 				div.appendChild(boton);
 
 				padre.appendChild(div);
