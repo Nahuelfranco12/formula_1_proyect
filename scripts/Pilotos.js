@@ -7,7 +7,7 @@ mostrar_Pilotos = function() {
 			let padre = document.getElementById('contenedor-pilotos')
 			padre.innerHTML = '';
 
-            if (!padre) {
+      if (!padre) {
 				console.error("No se encontró un elemento con ese ID");
 				return;
 			}
@@ -16,7 +16,7 @@ mostrar_Pilotos = function() {
 				let div = document.createElement('div');
 				div.className = 'tarjeta';
 
-                let nombre = document.createElement('h2');
+        let nombre = document.createElement('h2');
 				nombre.textContent = piloto.nombre_piloto;
 
 				let id = document.createElement('p');
@@ -37,6 +37,7 @@ mostrar_Pilotos = function() {
 				let escuderia_nombre = document.createElement('p');
 				escuderia_nombre.textContent = `Escuderia: ${piloto.escuderia.nombre_escuderia}`;
 
+
 				let boton = document.createElement('button');
 				boton.className = 'boton_borrar';
 				boton.textContent = 'Borrar';
@@ -45,7 +46,7 @@ mostrar_Pilotos = function() {
 				};
 
 
-                div.appendChild(nombre);
+        div.appendChild(nombre);
 				div.appendChild(id);
 				div.appendChild(nacionalidad);
 				div.appendChild(edad);
@@ -156,5 +157,6 @@ function limpiar_formulario() {
     document.getElementById('posicion_piloto').value = '';
     document.getElementById('id_escuderia').value = '';
 }
+
 
 mostrar_Pilotos();
