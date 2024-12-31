@@ -7,7 +7,7 @@ mostrar_Pilotos = function() {
 			let padre = document.getElementById('contenedor-pilotos')
 			padre.innerHTML = '';
 
-            if (!padre) {
+      if (!padre) {
 				console.error("No se encontró un elemento con ese ID");
 				return;
 			}
@@ -16,7 +16,7 @@ mostrar_Pilotos = function() {
 				let div = document.createElement('div');
 				div.className = 'tarjeta';
 
-                let nombre = document.createElement('h2');
+        let nombre = document.createElement('h2');
 				nombre.textContent = piloto.nombre_piloto;
 
 				let id = document.createElement('p');
@@ -34,8 +34,9 @@ mostrar_Pilotos = function() {
 				let posicion = document.createElement('p');
 				posicion.textContent = `Posicion: ${piloto.posicion_piloto}`;
 
-                let nombre_escuderia = document.createElement('p');
-                nombre_escuderia.textContent = `Nombre de Escuderia: ${piloto.actual_escuderia}`;
+				let escuderia_nombre = document.createElement('p');
+				escuderia_nombre.textContent = `Escuderia: ${piloto.escuderia.nombre_escuderia}`;
+
 
 				let boton = document.createElement('button');
 				boton.className = 'boton_borrar';
@@ -45,13 +46,13 @@ mostrar_Pilotos = function() {
 				};
 
 
-                div.appendChild(nombre);
+        div.appendChild(nombre);
 				div.appendChild(id);
 				div.appendChild(nacionalidad);
 				div.appendChild(edad);
 				div.appendChild(puntos);
 				div.appendChild(posicion);
-                div.appendChild(nombre_escuderia);
+				div.appendChild(escuderia_nombre);
 				div.appendChild(boton);
 
 				padre.appendChild(div);
@@ -80,7 +81,6 @@ agregar_piloto = function() {
         const puntos = document.getElementById('puntos_piloto').value;
         const posicion = document.getElementById('posicion_piloto').value;
         const escuderia = document.getElementById('id_escuderia').value;
-        const nombre_escuderia = document.getElementById('actual_escuderia').value;
 
         let body = {
             nombre_piloto: nombre,
@@ -88,8 +88,7 @@ agregar_piloto = function() {
             edad_piloto: parseInt(edad),
             puntos_piloto: parseInt(puntos),
             posicion_piloto: parseInt(posicion),
-            id_escuderia: parseInt(escuderia),
-            actual_escuderia: nombre_escuderia
+            id_escuderia: parseInt(escuderia)
         };
         fetch("http://127.0.0.1:3000/api/v1/pilotos",{
             method: 'POST',
@@ -157,7 +156,6 @@ function limpiar_formulario() {
     document.getElementById('puntos_piloto').value = '';
     document.getElementById('posicion_piloto').value = '';
     document.getElementById('id_escuderia').value = '';
-    document.getElementById('actual_escuderia').value = '';
 }
 
 
