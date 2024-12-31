@@ -155,7 +155,6 @@ function limpiar_formulario() {
     document.getElementById('puntos_piloto').value = '';
     document.getElementById('posicion_piloto').value = '';
     document.getElementById('id_escuderia').value = '';
-    
 }
 
 mostrar_Pilotos();
