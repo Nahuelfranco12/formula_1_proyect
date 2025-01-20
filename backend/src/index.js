@@ -1,6 +1,7 @@
 const { PrismaClient } = require('@prisma/client')
 const express = require('express')
 var cors = require('cors')
+app.use(cors({origin: 'https://proyecto-f1.onrender.com' }));
 const app = express()
 const port = 3000
 
