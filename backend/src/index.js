@@ -6,12 +6,6 @@ const port = 3000
 
 const prisma = new PrismaClient()
 
-import { createClient } from '@supabase/supabase-js'
-
-const supabaseUrl = 'https://zgmukxhsrrtowefmclhr.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
-
 app.use(express.json())
 app.use(cors())
 app.use(cors({
