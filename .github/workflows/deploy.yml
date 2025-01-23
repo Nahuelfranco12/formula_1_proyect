@@ -10,7 +10,14 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Deploy
+
+            - name: deploy pagina
+              uses: actions/checkout@v2
+            
+              env:
+                VITE_BACKEND_URL: ${{ secrets.VITE_BACKEND_URL }}
+
+            - name: Desplego la pagina
               uses: peaceiris/actions-gh-pages@v3
               with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
