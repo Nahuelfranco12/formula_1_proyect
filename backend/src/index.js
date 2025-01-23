@@ -8,6 +8,9 @@ const prisma = new PrismaClient()
 
 app.use(express.json())
 app.use(cors())
+app.use(cors({
+  origin: 'https://formula-1-proyect-p5xn.onrender.com'
+}))
 
 app.get('/', (req, res) => {
 	res.send('Formula1 app')
