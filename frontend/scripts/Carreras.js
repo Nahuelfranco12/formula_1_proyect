@@ -154,11 +154,14 @@ function crearCarrera(event) {
     }).then(response => {
         if (response.status === 201) {
             alert("carrera creada con exito")
+            mostrar_carreras()
+            limpiarFormulario()
+            window.location.href = 'Carreras.html';
         } else {
             alert("error al crear la carrera")
         }
     })
-    window.location.href = 'Carreras.html';
+    
 
 }
 
